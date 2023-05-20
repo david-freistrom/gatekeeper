@@ -248,9 +248,7 @@ crds:
 pdb:
   controllerManager:
     minAvailable: 1
-service:
-  extraLabels:
-    service.cilium.io/global: "true"
+service: {}
 disabledBuiltins: ["{http.send}"]
 psp:
   enabled: true
