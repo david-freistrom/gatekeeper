@@ -7,6 +7,9 @@ metadata:
     gatekeeper.sh/system: "yes"
     heritage: '{{ .Release.Service }}'
     release: '{{ .Release.Name }}'
+    {{- if .Values.service.extraLabels }}
+    {{- toYaml .Values.service.extraLabels | trim | nindent 4 }}
+    {{- end }}
   name: gatekeeper-webhook-service
   namespace: '{{ .Release.Namespace }}'
 spec:
